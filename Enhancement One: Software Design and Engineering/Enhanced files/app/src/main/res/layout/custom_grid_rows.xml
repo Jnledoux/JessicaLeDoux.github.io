@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/login_background"
+    android:padding="8dp">
+
+    <!-- EDIT BUTTON AND ICON -->
+    <ImageButton
+        android:id="@+id/grid_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/edit_item"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+
+    <!-- ITEM DESCRIPTION -->
+    <TextView
+        android:id="@+id/custom_item_desc"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:hint="@string/item_name"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E7D506"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp" />
+
+    <!-- ITEM QUALITY -->
+    <TextView
+        android:id="@+id/custom_item_qty"
+        android:layout_width="72dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:hint="@string/item_total"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E7D506" />
+
+    <!-- ITEM CATEGORY -->
+    <TextView
+        android:id="@+id/custom_item_category"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:hint="@string/category"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E7D506" />
+
+    <!-- DELETE BUTTON -->
+    <ImageButton
+        android:id="@+id/custom_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/delete_item"
+        android:contentDescription="@string/delete_item" />
+
+</LinearLayout>

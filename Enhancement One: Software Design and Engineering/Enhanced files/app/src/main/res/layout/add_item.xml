@@ -1,0 +1,200 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background"
+    tools:context=".AddItem">
+
+    <!-- HEADER -->
+    <TextView
+        android:id="@+id/add_item_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="@string/add_item_to_inventory"
+        android:textColor="#E7D506"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- LOGGED-IN USER -->
+    <TextView
+        android:id="@+id/current_logged_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#E7D506"
+        android:textSize="12sp"
+        android:gravity="center_horizontal"
+        android:hint="@string/logged_user"
+        app:layout_constraintTop_toBottomOf="@id/add_item_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ITEM DESCRIPTION LABEL -->
+    <TextView
+        android:id="@+id/item_desc_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/item_description"
+        android:textColor="#E7D506"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/current_logged_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228" />
+
+    <!-- ITEM DESCRIPTION INPUT -->
+    <EditText
+        android:id="@+id/item_desc"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_item_description"
+        android:textColorHint="@color/black"
+        android:inputType="textCapWords"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:autofillHints="Item Description"
+        app:layout_constraintTop_toBottomOf="@id/item_desc_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ITEM CATEGORY LABEL -->
+    <TextView
+        android:id="@+id/item_category_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/item_category"
+        android:textColor="#E7D506"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/item_desc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.282" />
+
+    <!-- ITEM CATEGORY INPUT -->
+    <EditText
+        android:id="@+id/item_category"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/enter_item_category"
+        android:textColorHint="@color/black"
+        android:inputType="textCapWords"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:autofillHints="Item Category"
+        app:layout_constraintTop_toBottomOf="@id/item_category_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ITEM QUANTITY LABEL -->
+    <TextView
+        android:id="@+id/item_quantity_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/item_quantity"
+        android:textColor="#E7D506"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/item_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274" />
+
+    <!-- QUANTITY ADJUSTMENT ROW -->
+    <LinearLayout
+        android:id="@+id/item_quantity_adjustments"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/item_quantity_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- DECREASE BUTTON -->
+        <ImageButton
+            android:id="@+id/item_qty_dec"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner_yellow"
+            android:contentDescription="@string/decrease_item_amount"
+            app:srcCompat="@drawable/decrease_arrow" />
+
+        <!-- QUANTITY INPUT -->
+        <EditText
+            android:id="@+id/item_quantity"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:autofillHints="Item Quantity"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="@string/_0"
+            android:textColor="#E7D506"
+            android:textColorHint="#E7D506"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- INCREASE BUTTON -->
+        <ImageButton
+            android:id="@+id/item_qty_inc"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_corner_yellow"
+            android:contentDescription="@string/increase_item_amount"
+            app:srcCompat="@drawable/increase_arrow" />
+    </LinearLayout>
+
+    <!-- CANCEL BUTTON -->
+    <Button
+        android:id="@+id/add_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/cancel"
+        android:backgroundTint="#E7D506"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/item_quantity_adjustments"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ADD ITEM BUTTON -->
+    <Button
+        android:id="@+id/add_item_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="72dp"
+        android:text="@string/add_item"
+        android:backgroundTint="#E7D506"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/item_quantity_adjustments"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
