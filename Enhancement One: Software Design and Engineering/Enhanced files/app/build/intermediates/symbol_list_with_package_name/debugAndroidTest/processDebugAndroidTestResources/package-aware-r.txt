@@ -1,0 +1,3 @@
+com.example.jessica_ledoux_project_3.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
